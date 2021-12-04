@@ -13,3 +13,5 @@ if (nombre==""):
 
 # CAPTURADOR DE PANTALLA SALVARA EN ARCHIVO con nombre en directorio de trabajo
 pyautogui.screenshot(nombre+".png")
+
+print("me vacunaron...")

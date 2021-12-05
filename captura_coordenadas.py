@@ -31,7 +31,7 @@ def presiono_ctrl_shift_z():
     print("Se salvo en su directorio archivo de captura: "+nombre+str(ii)+".png")
     print("")
     print("    Reingrese coordenadas de interes para nueva captura")
-
+    
   except:
     pyautogui.alert("TOMO INCORRECTAMENTE SECUENCIA DE COORDENADAS, Hagalo nuevamente!")
 

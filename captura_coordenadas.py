@@ -15,12 +15,15 @@ def presiono_ctrl_shift_a():
   global aaa
   # leo las coordenadas y las cargo en la tupla aaa
   aaa=pyautogui.position()
+  print(" Coordenadas superior izquierda seleccionada: "+str(aaa))
   
 def presiono_ctrl_shift_z():
   global ii
   global zzz
   global nombre
   ii=1+ii
+  zzz=pyautogui.position()
+  print(" Coordenadas inferior derecha seleccionada: "+str(zzz))
   mapa=(aaa[0],aaa[1],zzz[0]-aaa[0],zzz[1]-aaa[1])
   print("Coordenadas de captura: "+str(mapa))
   pyautogui.screenshot(nombre+str(ii)+".png",region=mapa)  
@@ -42,6 +45,8 @@ print("    COORDENADA SUPERIOR IZQUIERDA: <ctrl>+<shift>+a ")
 print("    COORDENADA INFERIOR DERECHA: <ctrl>+<shift>+z ")
 print("    SALIR: <ctrl>+x ")
 print(" ")
+print("... use combinacion teclas antes mencionada cuando quiera capturar regiones de pantalla ....")
+print(" ")
 
 ## cuado largue el programa las coordenadas deberan ser globales por eso en las funciones las coloco como globales
 aaa=(0,0)
@@ -53,6 +58,7 @@ if (nombre.strip()==""):
   nombre="mipantalla"
 
 teclasCalientes={"<ctrl>+<shift>+a":presiono_ctrl_shift_a, "<ctrl>+<shift>+z":presiono_ctrl_shift_z,"<ctrl>+x":presiono_salir}
-  
+
+#PARA SELECCIONAR REGIONES QUEDA EN BUCLE INFINITO ESPERANDO COMBINACION DE TECLAS SI NO SALGO EXPRESAMENTE DEL PROGRAMA
 with keyboard.GlobalHotKeys(teclasCalientes) as escucha:
-  escucha.join
+  escucha.join()

@@ -37,10 +37,11 @@ def presiono_salir():
   
 ## INICIO DEL PROGRAMA
 print("USO DE TECLAS:")
+print(" ")
 print("    COORDENADA SUPERIOR IZQUIERDA: <ctrl>+<shift>+a ")
 print("    COORDENADA INFERIOR DERECHA: <ctrl>+<shift>+z ")
 print("    SALIR: <ctrl>+x ")
-print("    COORDENADA SUPERIOR IZQUIERDA: <ctrl>+<shift>+a ")
+print(" ")
 
 ## cuado largue el programa las coordenadas deberan ser globales por eso en las funciones las coloco como globales
 aaa=(0,0)
@@ -51,7 +52,7 @@ nombre=input("Ingrese nombre de archivo a salvar: ")
 if (nombre.strip()==""):
   nombre="mipantalla"
 
-teclasCalientes={"<ctrl>+<shift>+a":presiono_ctrl_shift_a; "<ctrl>+<shift>+z":presiono_ctrl_shift_z,"<ctrl>+x":presiono_salir}
+teclasCalientes={"<ctrl>+<shift>+a":presiono_ctrl_shift_a, "<ctrl>+<shift>+z":presiono_ctrl_shift_z,"<ctrl>+x":presiono_salir}
   
 with keyboard.GlobalHotKeys(teclasCalientes) as escucha:
   escucha.join

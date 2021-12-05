@@ -21,20 +21,26 @@ def presiono_ctrl_shift_z():
   global ii
   global zzz
   global nombre
-  ii=1+ii
-  zzz=pyautogui.position()
-  print(" Coordenadas inferior derecha seleccionada: "+str(zzz))
-  mapa=(aaa[0],aaa[1],zzz[0]-aaa[0],zzz[1]-aaa[1])
-  print("Coordenadas de captura: "+str(aaa)+", "+str(zzz))
-  pyautogui.screenshot(nombre+str(ii)+".png",region=mapa)  
-  print("Se salvo en su directorio archivo de captura: "+nombre+str(ii)+".png")
-  print("")
-  print("    Reingrese coordenadas de interes para nueva captura")
+  try:
+    ii=1+ii
+    zzz=pyautogui.position()
+    print(" Coordenadas inferior derecha seleccionada: "+str(zzz))
+    mapa=(aaa[0],aaa[1],zzz[0]-aaa[0],zzz[1]-aaa[1])
+    print("Coordenadas de captura: "+str(aaa)+", "+str(zzz))
+    pyautogui.screenshot(nombre+str(ii)+".png",region=mapa)  
+    print("Se salvo en su directorio archivo de captura: "+nombre+str(ii)+".png")
+    print("")
+    print("    Reingrese coordenadas de interes para nueva captura")
+    
+ except:
+  pyautogui.alert("TOMO INCORRECTAMENTE SECUENCIA DE COORDENADAS, Hagalo nuevamente!")
 
 def presiono_salir():
   print("Gracias por usar este programa de captura de pantalla")
+  print("Autor: Leónides Berejnoi - l_berejnoi@yahoo.com - 2021")
+  print("")
   time.sleep(1)
-  os.exit(0)
+  os._exit(0)
   
   
   
@@ -53,7 +59,9 @@ aaa=(0,0)
 zzz=(10,10)
 ii=0
 nombre=input("Ingrese nombre de archivo a salvar: ")
-
+print("")
+print(" listo para continuar ")
+print("")
 if (nombre.strip()==""):
   nombre="mipantalla"
 

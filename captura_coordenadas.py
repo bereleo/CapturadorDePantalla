@@ -25,7 +25,7 @@ def presiono_ctrl_shift_z():
   zzz=pyautogui.position()
   print(" Coordenadas inferior derecha seleccionada: "+str(zzz))
   mapa=(aaa[0],aaa[1],zzz[0]-aaa[0],zzz[1]-aaa[1])
-  print("Coordenadas de captura: "+str(mapa))
+  print("Coordenadas de captura: "+str(aaa)+", "+str(zzz))
   pyautogui.screenshot(nombre+str(ii)+".png",region=mapa)  
   print("Se salvo en su directorio archivo de captura: "+nombre+str(ii)+".png")
   print("")

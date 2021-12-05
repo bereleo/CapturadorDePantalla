@@ -32,7 +32,7 @@ def presiono_ctrl_shift_z():
     print("")
     print("    Reingrese coordenadas de interes para nueva captura")
     
- except:
+except:
   pyautogui.alert("TOMO INCORRECTAMENTE SECUENCIA DE COORDENADAS, Hagalo nuevamente!")
 
 def presiono_salir():
